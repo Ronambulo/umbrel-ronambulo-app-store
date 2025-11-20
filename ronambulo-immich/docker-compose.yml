@@ -1,47 +1,73 @@
-name: immich
+name: ronambulo-immich
 
 services:
   immich-server:
-    container_name: immich_server
+    container_name: ronambulo_immich_server
     image: ghcr.io/immich-app/immich-server:release
     volumes:
-      - /data/immich/upload:/data
+      - immich_uploads:/data
       - /etc/localtime:/etc/localtime:ro
     environment:
-      DB_HOST: immich_postgres
-      DB_USERNAME: postgres
-      DB_PASSWORD: postgres
+      DB_HOST: ronambulo_immich_postgres
+      DB_PORT: 5432
+      DB_USERNAME: immich
+      DB_PASSWORD: inmich123
       DB_DATABASE_NAME: immich
-      REDIS_HOST: immich_redis
+      REDIS_HOST: ronambulo_immich_redis
+      UPLOAD_LOCATION: /data
+      IMMICH_LOG_LEVEL: log
     ports:
       - "2283:2283"
     depends_on:
-      - immich_redis
-      - immich_postgres
+      - redis
+      - database
     restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:2283/server-info"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
 
   immich-machine-learning:
-    container_name: immich_machine_learning
+    container_name: ronambulo_immich_ml
     image: ghcr.io/immich-app/immich-machine-learning:release
     volumes:
-      - /data/immich/cache:/cache
+      - model-cache:/cache
+    environment:
+      LOG_LEVEL: info
+      MACHINE_LEARNING_HOST: 0.0.0.0
     restart: always
-    depends_on:
-      - immich_server
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3003"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
-  immich_redis:
-    container_name: immich_redis
+  redis:
+    container_name: ronambulo_immich_redis
     image: docker.io/valkey/valkey:8
     restart: always
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
 
-  immich_postgres:
-    container_name: immich_postgres
+  database:
+    container_name: ronambulo_immich_postgres
     image: ghcr.io/immich-app/postgres:14-vectorchord0.4.3-pgvectors0.2.0
     environment:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: inmich123
+      POSTGRES_USER: immich
       POSTGRES_DB: immich
+      POSTGRES_INITDB_ARGS: "--data-checksums"
     volumes:
-      - /data/immich/db:/var/lib/postgresql/data
+      - immich_database:/var/lib/postgresql/data
     shm_size: 128mb
     restart: always
+
+volumes:
+  model-cache:
+  immich_uploads:
+  immich_database:
