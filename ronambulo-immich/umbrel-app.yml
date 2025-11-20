@@ -20,7 +20,7 @@ gallery:
   - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Fimmich%2F2.jpg&w=1920&q=75
   - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Fimmich%2F3.jpg&w=1920&q=75
 releaseNotes: >-
-  Initial release of Immich app for Umbrel in version 2.3.1.
+  Initial release of Immich app for Umbrel in version 2.3.1. test 1
 dependencies: []
 path: ""
 defaultUsername: ""
