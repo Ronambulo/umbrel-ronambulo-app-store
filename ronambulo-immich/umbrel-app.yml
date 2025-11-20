@@ -1,25 +1,28 @@
+manifestVersion: 1
 id: ronambulo-immich
 name: Immich
-category: Media
-version: "1.0.0"
-tagline: "Self-hosted photo and video backup solution"
+tagline: Self-hosted photo and video backup solution
 icon: https://i.redd.it/what-would-you-think-of-a-refresh-of-the-logo-v0-ex5tc5dr79bf1.png?width=1010&format=png&auto=webp&s=d8ed1cd906b7ab8b29ce509dc5eb09cb2ecbce3a
-
-description: |
-  Immich es una solución de copia de seguridad y gestión de fotos y vídeos
-  autoalojada, rápida y moderna. Guarda todas tus fotos localmente en tu servidor.
-
-developer: "Ronambulo"
-website: "https://immich.app"
-repo: "https://github.com/immich-app/immich"
-
+category: Media
+version: "Latest"
 port: 2283
+description: >-
+  Immich is a self-hosted photo and video backup solution that prioritizes privacy, ease of use, and performance. It offers features such as automatic backup from mobile devices, AI-powered organization and search, and secure sharing options. Immich is designed to be user-friendly and efficient, making it easy for users to manage their media collections while keeping their data private.
 
-app_proxy:
-  port: 2283
-  rewrite: true
-
+developer: Umbrel
+website: https://umbrel.com
+submitter: Umbrel
+submission: https://github.com/getumbrel/umbrel-hello-world-app
+repo: https://github.com/getumbrel/umbrel-hello-world-app
+support: https://github.com/getumbrel/umbrel-hello-world-app/issues
+gallery:
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Fimmich%2F1.jpg&w=1920&q=75
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Fimmich%2F2.jpg&w=1920&q=75
+  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Fimmich%2F3.jpg&w=1920&q=75
+releaseNotes: >-
+  Initial release of Immich app for Umbrel in version 2.3.1.
+  Initial release of Immich app for Umbrel in version 2.3.1. test 1
 dependencies: []
-
-docker_compose:
-  file: ./docker-compose.yml
+path: ""
+defaultUsername: ""
+defaultPassword: ""
