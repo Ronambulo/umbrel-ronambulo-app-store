@@ -1,27 +1,49 @@
-manifestVersion: 1
 id: ronambulo-immich
-name: Immich
-tagline: Self-hosted photo and video backup solution
-icon: https://i.redd.it/what-would-you-think-of-a-refresh-of-the-logo-v0-ex5tc5dr79bf1.png?width=1010&format=png&auto=webp&s=d8ed1cd906b7ab8b29ce509dc5eb09cb2ecbce3a
-category: Media
-version: "Latest"
-port: 2283
-description: >-
-  Immich is a self-hosted photo and video backup solution that prioritizes privacy, ease of use, and performance. It offers features such as automatic backup from mobile devices, AI-powered organization and search, and secure sharing options. Immich is designed to be user-friendly and efficient, making it easy for users to manage their media collections while keeping their data private.
+name: Immich (Ronambulo)
+version: "1.0.0"
+tagline: Self-hosted photo and video backup solution.
+description: >
+  Immich es una plataforma de gestión de fotos y vídeos autoalojada, compatible con copias en segundo plano desde dispositivos móviles y sincronización local.
+  Esta versión está adaptada para tu App Store personalizada en Umbrel.
 
-developer: Umbrel
-website: https://umbrel.com
-submitter: Umbrel
-submission: https://github.com/getumbrel/umbrel-hello-world-app
-repo: https://github.com/getumbrel/umbrel-hello-world-app
-support: https://github.com/getumbrel/umbrel-hello-world-app/issues
-gallery:
-  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Fimmich%2F1.jpg&w=1920&q=75
-  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Fimmich%2F2.jpg&w=1920&q=75
-  - https://apps.umbrel.com/_next/image?url=https%3A%2F%2Fgetumbrel.github.io%2Fumbrel-apps-gallery%2Fimmich%2F3.jpg&w=1920&q=75
-releaseNotes: >-
-  Initial release of Immich app for Umbrel in version 2.3.1. test 1
-dependencies: []
-path: ""
-defaultUsername: ""
-defaultPassword: ""
+developer: Immich Project
+website: https://immich.app
+repo: https://github.com/Ronambulo/umbrel-ronambulo-app-store
+support: https://github.com/immich-app/immich/issues
+
+icon: https://i.redd.it/what-would-you-think-of-a-refresh-of-the-logo-v0-ex5tc5dr79bf1.png?width=1010&format=png&auto=webp&s=d8ed1cd906b7ab8b29ce509dc5eb09cb2ecbce3a
+
+port: 2283
+
+# -------------------------------------------------------------
+# 🔥 LO MÁS IMPORTANTE: Reverse Proxy
+# -------------------------------------------------------------
+app_proxy:
+  proxy:
+    port: 2283
+    health_check:
+      path: /api/server-info
+      interval: 10s
+      timeout: 5s
+
+# -------------------------------------------------------------
+# 📦 Permisos
+# -------------------------------------------------------------
+permissions:
+  - network
+  - storage
+  - process
+  - system
+
+# -------------------------------------------------------------
+# 📁 Paths para UmbrelOS (donde guardará datos)
+# -------------------------------------------------------------
+paths:
+  data: /data/immich
+  cache: /data/immich/cache
+
+# -------------------------------------------------------------
+# ⏳ Tiempo estimado de instalación
+# -------------------------------------------------------------
+install:
+  seconds: 30
