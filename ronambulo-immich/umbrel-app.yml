@@ -4,7 +4,7 @@ name: Immich
 tagline: Self-hosted photo and video backup solution
 icon: https://i.redd.it/what-would-you-think-of-a-refresh-of-the-logo-v0-ex5tc5dr79bf1.png?width=1010&format=png&auto=webp&s=d8ed1cd906b7ab8b29ce509dc5eb09cb2ecbce3a
 category: Media
-version: "1.0.0"
+version: "Latest"
 port: 2283
 description: >-
   Immich is a self-hosted photo and video backup solution that prioritizes privacy, ease of use, and performance. It offers features such as automatic backup from mobile devices, AI-powered organization and search, and secure sharing options. Immich is designed to be user-friendly and efficient, making it easy for users to manage their media collections while keeping their data private.
