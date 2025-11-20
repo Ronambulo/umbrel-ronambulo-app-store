@@ -1,49 +1,25 @@
 id: ronambulo-immich
-name: Immich (Ronambulo)
+name: Immich
+category: Media
 version: "1.0.0"
-tagline: Self-hosted photo and video backup solution.
-description: >
-  Immich es una plataforma de gestión de fotos y vídeos autoalojada, compatible con copias en segundo plano desde dispositivos móviles y sincronización local.
-  Esta versión está adaptada para tu App Store personalizada en Umbrel.
-
-developer: Immich Project
-website: https://immich.app
-repo: https://github.com/Ronambulo/umbrel-ronambulo-app-store
-support: https://github.com/immich-app/immich/issues
-
+tagline: "Self-hosted photo and video backup solution"
 icon: https://i.redd.it/what-would-you-think-of-a-refresh-of-the-logo-v0-ex5tc5dr79bf1.png?width=1010&format=png&auto=webp&s=d8ed1cd906b7ab8b29ce509dc5eb09cb2ecbce3a
+
+description: |
+  Immich es una solución de copia de seguridad y gestión de fotos y vídeos
+  autoalojada, rápida y moderna. Guarda todas tus fotos localmente en tu servidor.
+
+developer: "Ronambulo"
+website: "https://immich.app"
+repo: "https://github.com/immich-app/immich"
 
 port: 2283
 
-# -------------------------------------------------------------
-# 🔥 LO MÁS IMPORTANTE: Reverse Proxy
-# -------------------------------------------------------------
 app_proxy:
-  proxy:
-    port: 2283
-    health_check:
-      path: /api/server-info
-      interval: 10s
-      timeout: 5s
+  port: 2283
+  rewrite: true
 
-# -------------------------------------------------------------
-# 📦 Permisos
-# -------------------------------------------------------------
-permissions:
-  - network
-  - storage
-  - process
-  - system
+dependencies: []
 
-# -------------------------------------------------------------
-# 📁 Paths para UmbrelOS (donde guardará datos)
-# -------------------------------------------------------------
-paths:
-  data: /data/immich
-  cache: /data/immich/cache
-
-# -------------------------------------------------------------
-# ⏳ Tiempo estimado de instalación
-# -------------------------------------------------------------
-install:
-  seconds: 30
+docker_compose:
+  file: ./docker-compose.yml
