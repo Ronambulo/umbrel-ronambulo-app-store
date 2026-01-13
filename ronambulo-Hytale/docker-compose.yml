@@ -1,0 +1,11 @@
+services:
+  hytale:
+    image: deinfreu/hytale-server:experimental
+    container_name: hytale-server
+    environment:
+      - EULA=TRUE
+    restart: unless-stopped
+    ports:
+      - "5520:5520/udp"
+    volumes:
+      - ./data:/home/container
