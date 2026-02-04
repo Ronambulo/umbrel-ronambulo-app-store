@@ -2,27 +2,18 @@ id: prometheus-node
 name: Prometheus + Node Exporter
 version: "1.0.0"
 category: Monitoring
-tagline: Métricas del servidor (CPU/RAM/Disco/Red)
+tagline: Metrics collection for your server
 description: >
-  Prometheus recopila y almacena métricas de tu máquina a través de node-exporter.
-  Incluye almacenamiento persistente para la TSDB de Prometheus.
-
+  Prometheus scrapes metrics from node-exporter running on the host.
+  Includes persistent Prometheus TSDB storage.
 developer: You
-
-website: "https://prometheus.io/"
-repo: "https://github.com/prometheus/prometheus"
-support: "https://prometheus.io/community/"
-
+website: ""
+repo: ""
+support: ""
 port: 9090
-
-# Icono que verá Umbrel en la lista de apps
-icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Prometheus_software_logo.svg/3840px-Prometheus_software_logo.svg.png"
-
 gallery: []
-
 releaseNotes: >
-  v1.0.0: Prometheus + node-exporter, almacenamiento persistente y configuración base.
-
+  Initial release: Prometheus + node-exporter.
 dependencies: []
 path: ""
 defaultUsername: ""
