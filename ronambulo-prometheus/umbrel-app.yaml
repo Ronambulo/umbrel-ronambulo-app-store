@@ -1,19 +1,28 @@
+manifestVersion: 1
 id: ronambulo-prometheus
 name: Prometheus + Node Exporter
-version: "1.0.0"
+tagline: Metrics collection and monitoring for your server
+icon: https://raw.githubusercontent.com/prometheus/prometheus/main/documentation/images/prometheus-logo.svg
 category: Monitoring
-tagline: Metrics collection for your server
-description: >
-  Prometheus scrapes metrics from node-exporter running on the host.
-  Includes persistent Prometheus TSDB storage.
-developer: You
-website: ""
-repo: ""
-support: ""
+version: "1.0.0"
 port: 9090
-gallery: []
-releaseNotes: >
-  Initial release: Prometheus + node-exporter.
+description: >-
+  Prometheus is an open-source systems monitoring and alerting toolkit. This app includes Prometheus server for metrics collection and storage, plus Node Exporter for collecting hardware and OS metrics from your server.
+  
+  Prometheus scrapes metrics from node-exporter running on the host and stores them in a persistent time-series database. Access the Prometheus web UI to query metrics, create graphs, and set up alerts.
+
+developer: Prometheus Community
+website: https://prometheus.io
+submitter: Ronambulo
+submission: https://github.com/ronambulo/umbrel-ronambulo-app-store
+repo: https://github.com/prometheus/prometheus
+support: https://github.com/prometheus/prometheus/issues
+gallery:
+  - https://prometheus.io/assets/grafana_prometheus.png
+  - https://prometheus.io/assets/prometheus_graph.png
+releaseNotes: >-
+  Initial release with Prometheus v2.51.2 and Node Exporter v1.8.1.
+  Includes persistent TSDB storage and automatic metrics collection from your server.
 dependencies: []
 path: ""
 defaultUsername: ""
