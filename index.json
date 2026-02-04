@@ -1,4 +1,4 @@
 {
   "name": "Ronambulo App Store",
-  "apps": ["ronambulo-immich"]
+  "apps": ["ronambulo-immich", "ronambulo-prometheus"]
 }
