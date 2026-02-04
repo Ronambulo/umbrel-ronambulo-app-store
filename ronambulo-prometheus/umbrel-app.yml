@@ -1,22 +1,17 @@
 id: ronambulo-prometheus
 name: Prometheus
 tagline: Métricas y alertas (PromQL) para tu Umbrel
-icon: icons/icon.png
 category: Utilities
 version: "1.0.0"
 port: 9090
+icon: icons/icon.png
+
 description: >
-  Prometheus para recolectar y consultar métricas. Incluye Node Exporter y cAdvisor
-  para métricas del host y contenedores.
+  Prometheus para recolectar y consultar métricas. Incluye node-exporter y cAdvisor.
+
 developer: Ronambulo
 website: https://prometheus.io
-submitter: Ronambulo
 repo: https://github.com/ronambulo/umbrel-ronambulo-app-store
 support: https://github.com/ronambulo/umbrel-ronambulo-app-store/issues
-gallery: []
-releaseNotes: >
-  Primera versión: Prometheus + node-exporter + cAdvisor.
+
 dependencies: []
-path: ""
-defaultUsername: ""
-defaultPassword: ""
