@@ -1,4 +1,4 @@
-id: prometheus-node
+id: ronambulo-prometheus
 name: Prometheus + Node Exporter
 version: "1.0.0"
 category: Monitoring
